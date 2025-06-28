@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>All Student Results</h2>
+    <table>
+        <tr>
+            <th>Name</th><th>Roll</th>
+            <th>Sub1</th><th>Sub2</th><th>Sub3</th><th>Sub4</th><th>Sub5</th>
+            <th>Total</th><th>Average</th><th>Grade</th>
+        </tr>
+        {% for r in records %}
+        <tr>
+            {% for item in r %}
+            <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Back to Home</a>
+</body>
+</html>
